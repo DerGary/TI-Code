@@ -9,21 +9,20 @@ namespace DynRucksack
     class RucksackNaive
     {
         int B;
-        SpecialArray<string> W;
+        int n;
         SpecialArray<float> vol;
         SpecialArray<float> p;
 
         public RucksackNaive(RucksackInput I)
         {
             B = I.MaxVolume;
-            W = new SpecialArray<string>(I.Wares.Select(_ => _.Name));
+            n = I.Length;
             vol = new SpecialArray<float>(I.Wares.Select(_ => (float)_.Volume));
             p = new SpecialArray<float>(I.Wares.Select(_ => (float)_.Price));
         }
 
         public int Compute()
         {
-            int n = W.Length;
             int alpha = 0;
 
             while (true)

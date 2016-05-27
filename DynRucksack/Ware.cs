@@ -23,13 +23,11 @@ namespace DynRucksack
 
     class Ware
     {
-        public readonly string Name;
         public readonly int Volume;
         public readonly int Price;
 
-        public Ware(string name, int volume, int price)
+        public Ware(int volume, int price)
         {
-            Name = name;
             Volume = volume;
             Price = price;
         }

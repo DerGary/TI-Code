@@ -8,21 +8,20 @@ namespace DynRucksack
 {
     class ARkRucksack 
     {
+        float k;
         DynRucksack algo;
         public ARkRucksack(RucksackInput I, float k) 
         {
-            List<Ware> waren = new List<Ware>();
-            foreach (Ware ware in I.Wares) 
-            {
-                waren.Add(new Ware(ware.Name, ware.Volume, (int)(ware.Price / k)));
-            }
+            this.k = k;
+
+            var waren = I.Wares.Select(w => new Ware(w.Volume, (int)(w.Price / k)));
             RucksackInput Ired = new RucksackInput(I.MaxVolume, waren.ToArray());
             algo = new DynRucksack(Ired);
         }
 
-        public int Compute() 
+        public float Compute() 
         {
-            return algo.Compute();
+            return algo.Compute() * k;
         }
     }
 }

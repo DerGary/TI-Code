@@ -20,7 +20,7 @@ namespace DynRucksack
             algo = new ARkRucksack(I, k);
         }
 
-        public int Compute()
+        public float Compute()
         {
             return algo.Compute();
         }
