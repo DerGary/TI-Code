@@ -9,6 +9,5 @@ namespace DynRucksack {
         public int Price { get; set; }
         public int UsedVolume { get; set; }
         public int Repeats { get; set; }
-        public Ware[] Wares { get; set; }
     }
 }
