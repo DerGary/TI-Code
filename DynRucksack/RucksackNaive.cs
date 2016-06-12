@@ -21,7 +21,7 @@ namespace DynRucksack
             p = new SpecialArray<float>(I.Wares.Select(_ => (float)_.Price));
         }
 
-        public int Compute()
+        public RucksackResult Compute()
         {
             int alpha = 0;
 
@@ -33,8 +33,12 @@ namespace DynRucksack
 
                 Console.WriteLine($"α={alpha}; F={(int)f}");
 
-                if (B < f)
-                    return alpha - 1;
+                if (B < f) 
+                {
+                    alpha = alpha - 1;
+                    var result = new RucksackResult() { Repeats = alpha, UsedVolume = (int)F(n, alpha), Price = alpha};
+                    return result;
+                }
             }
         }
 

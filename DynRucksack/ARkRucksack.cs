@@ -19,9 +19,11 @@ namespace DynRucksack
             algo = new DynRucksack(Ired);
         }
 
-        public float Compute() 
+        public RucksackResult Compute() 
         {
-            return algo.Compute() * k;
+            var result = algo.Compute();
+            result.Price = (int)(result.Price * k);
+            return result;
         }
     }
 }

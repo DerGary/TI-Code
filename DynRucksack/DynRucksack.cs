@@ -29,7 +29,7 @@ namespace DynRucksack
             FTable = new Table<float>(n, Psum, initValue: float.NaN);
         }
 
-        public int Compute()
+        public RucksackResult Compute()
         {
             int alpha = 0;
             int f = 0;
@@ -54,7 +54,9 @@ namespace DynRucksack
                 Console.WriteLine($"α={alpha}; F={f}");
             } while (B >= f);
 
-            return alpha - 1;
+            alpha = alpha - 1;
+            var result = new RucksackResult() { Repeats = alpha, UsedVolume = (int)F(n, alpha), Price = alpha};
+            return result;
         }
 
         float F(int j, float alpha)
