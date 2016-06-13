@@ -148,9 +148,9 @@ namespace DynRucksack
 
 
             //aufgabe 1 b
-            //int i = 1;
+            int i = 1;
             //aufgabe 1 c
-            int i = 10^5;
+            //int i = 10^5;
 
             var input = new RucksackInput(
                 //Volumen Rucksack:
@@ -160,7 +160,7 @@ namespace DynRucksack
                 new Ware(33, 23*i),//Zelt
                 new Ware(11, 15*i),//Getränke
                 new Ware(35, 33*i),//Pullover
-                new Ware(11, 32*i)//MP3-Player
+                new Ware(11, 32*i) //MP3-Player
             );
 
             //var algo = new DynRucksack(input);

@@ -6,21 +6,6 @@ using System.Threading.Tasks;
 
 namespace DynRucksack
 {
-    class RucksackInput
-    {
-        public readonly int MaxVolume;
-        public readonly Ware[] Wares;
-
-        public RucksackInput(int maxVolume, params Ware[] wares)
-        {
-            MaxVolume = maxVolume;
-            Wares = wares;
-        }
-
-        public int Length
-            => Wares.Length;
-    }
-
     class Ware
     {
         public readonly int Volume;

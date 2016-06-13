@@ -14,6 +14,7 @@ namespace DynRucksack
             if(eps <= 0.0 || eps >= 1.0) {
                 throw new ArgumentOutOfRangeException(nameof(eps));
             }
+
             int n = I.Length;
             float Pmax = I.Wares.Max(x => x.Price);
             float k = eps * (Pmax/n);
