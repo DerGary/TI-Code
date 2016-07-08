@@ -55,7 +55,7 @@ namespace DynRucksack
             } while (B >= f);
 
             alpha = alpha - 1;
-            var result = new RucksackResult() { Repeats = alpha, UsedVolume = (int)F(n, alpha), Price = alpha};
+            var result = new RucksackResult() { Repeats = alpha, UsedVolume = (int)F(n, alpha), Price = alpha, Table = FTable};
             return result;
         }
 

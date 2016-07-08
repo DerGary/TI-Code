@@ -148,24 +148,34 @@ namespace DynRucksack
 
 
             //aufgabe 1 b
-            int i = 1;
+            //int i = 1;
             //aufgabe 1 c
-            //int i = 10^5;
+            int i = 10^5;
+
+            //var input = new RucksackInput(
+            //    //Volumen Rucksack:
+            //    65,
+            //    //  Volumen, Nutzen
+            //    new Ware(23, 15*i),//Essen
+            //    new Ware(33, 23*i),//Zelt
+            //    new Ware(11, 15*i),//Getränke
+            //    new Ware(35, 33*i),//Pullover
+            //    new Ware(11, 32*i) //MP3-Player
+            //);
 
             var input = new RucksackInput(
                 //Volumen Rucksack:
-                65,
+                50,
                 //  Volumen, Nutzen
-                new Ware(23, 15*i),//Essen
-                new Ware(33, 23*i),//Zelt
-                new Ware(11, 15*i),//Getränke
-                new Ware(35, 33*i),//Pullover
-                new Ware(11, 32*i) //MP3-Player
+                new Ware(30, 120),//Essen
+                new Ware(20, 100),//Zelt
+                new Ware(10, 60)
             );
 
-            //var algo = new DynRucksack(input);
+
+            var algo = new DynRucksack(input);
             //var algo = new ARkRucksack(input, 10);
-            var algo = new FPASRucksack(input, (float)0.1);
+            //var algo = new FPASRucksack(input, (float)0.1);
             //var algo = new RucksackNaive(input);
 
             var sw = new Stopwatch();
@@ -176,6 +186,8 @@ namespace DynRucksack
             sw.Stop();
 
             Console.WriteLine($"The price is {result.Price}, the used volume is {result.UsedVolume} and the repeat count is {result.Repeats} and took {sw.Elapsed}.");
+            Console.WriteLine(result.Table.ToString());
+
             Console.ReadKey();
         }
     }

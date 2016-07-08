@@ -34,6 +34,18 @@ namespace DynRucksack
             set { innerArray[idx1 - 1, idx2 - 1] = value; }
         }
 
+        public override string ToString() {
+            StringBuilder builder = new StringBuilder();
+            for(int i = 0; i < Size2; i++) {
+                for(int j = 0; j < Size1; j++) {
+                    builder.Append(innerArray[j, i]);
+                    builder.Append(" ");
+                }
+                builder.Append("\r\n");
+            }
+            return builder.ToString();
+        }
+
         public int Length
             => innerArray.Length;
         public int Size1
